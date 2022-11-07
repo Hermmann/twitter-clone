@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 
 // mongodb connection
 mongoose
-  .connect("mongodb+srv://Hermmann:KhDwBb66oP1XdwCL@cluster0.lfvaceb.mongodb.net/?retryWrites=true&w=majority")
+  .connect("mongodb+srv://Hermmann:61MLlumqLph43GFe@cluster0.lfvaceb.mongodb.net?retryWrites=true&w=majority")
   .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((error) => console.error(error));
 

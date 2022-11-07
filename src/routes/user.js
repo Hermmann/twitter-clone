@@ -69,17 +69,23 @@ router.put("/users/:id", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-//delete following
-router.delete("/users/:id(", async (req, res) => {
+/* //delete following
+router.delete("/users/:id/unfollow", async (req, res) => {
   const { id } = req.params;
   const { idFollowing } = req.body;
   const myUser = await userSchema.find({_id:id})
   const followingUser  = await userSchema.find({_id:idFollowing})
-  console.log(myUser, followingUser);
+
+  const isFollowing = findFollower(myUser, followingUser);
+  console.log('Esta siguiendo? ',isFollowing);
   return res.json({ myUser, followingUser})
 });
 
-
+const findFollower = (myUser, followingUser) => {
+  const isFollowing = myUser.following.find((user) => user._id === followingUser._id);
+  console.log(myUser.following, followingUser._id);
+  return isFollowing;
+}; */
 
 
 module.exports = router;
